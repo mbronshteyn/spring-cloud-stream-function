@@ -23,6 +23,10 @@ ext {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.cloud:spring-cloud-function-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+
 	implementation 'org.apache.kafka:kafka-streams'
 	implementation 'org.springframework.cloud:spring-cloud-stream'
 	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka'
@@ -30,6 +34,11 @@ dependencies {
 	implementation 'org.springframework.kafka:spring-kafka'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
+	implementation 'org.springframework.cloud:spring-cloud-function-context'
+	compile('org.springframework.cloud:spring-cloud-stream-binder-kafka-streams')
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -46,3 +55,4 @@ dependencyManagement {
 test {
 	useJUnitPlatform()
 }
+
