@@ -1,0 +1,45 @@
+spring.kafka:
+  bootstrap-servers: localhost:9092
+spring.cloud.stream:
+  function:
+    definition: processType;odd;even;uppercase
+    routing.enabled: true
+
+  bindingRetryInterval: 1000
+  defaultBinder: kafka
+  kafka.binder:
+    autoAddPartitions: true
+    replicationFactor: 1
+    minPartitionCount: 3
+
+  kafka.streams.binder:
+    brokers:  localhost:9092
+    configuration:
+      commit.interval.ms: 10
+      default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+
+
+  bindings:
+    uppercase-in-0:
+      destination: word-in
+    uppercase-out-0:
+      destination: word-out
+    even-in-0:
+      destination: processType-out-0
+    odd-in-0:
+      destination: processType-out-0
+
+#spring.cloud.function:
+#
+#  routing-expression:
+#    even-in-0: headers['type']
+#    odd-in-0:  headers['type']
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        streams:
+          binder:
+            application-id: demo
