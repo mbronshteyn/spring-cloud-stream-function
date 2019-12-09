@@ -2,8 +2,7 @@ spring.kafka:
   bootstrap-servers: localhost:9092
 spring.cloud.stream:
   function:
-    definition: processType;odd;even;uppercase
-    routing.enabled: true
+    definition: odd;even;uppercase;functionRouter
 
   bindingRetryInterval: 1000
   defaultBinder: kafka
@@ -25,10 +24,6 @@ spring.cloud.stream:
       destination: word-in
     uppercase-out-0:
       destination: word-out
-    even-in-0:
-      destination: processType-out-0
-    odd-in-0:
-      destination: processType-out-0
 
 #spring.cloud.function:
 #
@@ -43,3 +38,6 @@ spring:
         streams:
           binder:
             application-id: demo
+
+server:
+  port: 18080
