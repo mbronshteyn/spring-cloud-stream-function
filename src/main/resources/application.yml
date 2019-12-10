@@ -21,9 +21,11 @@ spring.cloud.stream:
 
   bindings:
     uppercase-in-0:
-      destination: word-in
+      destination: word-in,word-in-1
     uppercase-out-0:
       destination: word-out
+    functionRouter-in-0:
+      destination: router-in-1,router-in-2
 
 #spring.cloud.function:
 #
