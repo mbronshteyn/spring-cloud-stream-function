@@ -27,12 +27,6 @@ spring.cloud.stream:
     functionRouter-in-0:
       destination: router-in-1,router-in-2
 
-#spring.cloud.function:
-#
-#  routing-expression:
-#    even-in-0: headers['type']
-#    odd-in-0:  headers['type']
-
 spring:
   cloud:
     stream:
