@@ -1,5 +1,7 @@
 # spring-cloud-stream-function
-Demo repository to show latest changes to Spring Cloud Stream Functions with Kafka
+Demo repository to show latest changes to Spring Cloud Stream Functions with Kafka. 
+
+This is the latest changes to Spring Cloud Stream project.  The change is switching from Annotations to Functional approach.
 
 1. Start Kafka cluster using docker-compose in docker directory
 2. Run applicaiton
