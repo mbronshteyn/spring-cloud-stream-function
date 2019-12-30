@@ -2,6 +2,7 @@ package mbronshteyn.spring.cloud.function.demo;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.extern.java.Log;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +12,8 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 @SpringBootApplication
+@Log
 public class DemoApplication {
-
 
   public static void main(String[] args) {
 
@@ -24,7 +25,7 @@ public class DemoApplication {
   @Bean
   public Function<String, String> uppercase() {
     return value -> {
-      System.out.println("Uppercasing " + value);
+      log.info("Uppercasing: " + value);
       return value.toUpperCase();
     };
   }
@@ -45,7 +46,7 @@ public class DemoApplication {
   }
 
   @Bean
-  public Consumer<Person> log() {
+  public Consumer<Person> personLog() {
     return person -> {
       System.out.println("Received: " + person);
     };

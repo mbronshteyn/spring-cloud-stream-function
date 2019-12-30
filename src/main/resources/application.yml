@@ -1,5 +1,6 @@
 spring.kafka:
   bootstrap-servers: localhost:9092
+
 spring.cloud.stream:
   function:
     definition: odd;even;uppercase;functionRouter
@@ -37,3 +38,4 @@ spring:
 
 server:
   port: 18080
+
