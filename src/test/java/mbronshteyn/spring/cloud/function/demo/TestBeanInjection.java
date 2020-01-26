@@ -14,11 +14,15 @@ public class TestBeanInjection {
     @Autowired
     String b;
 
+    @Autowired
+    String c;
+
     @Test
     void testBeanInjection() {
         System.out.println("Testing autoinjection: ");
         System.out.println(a);
         System.out.println(b);
+        System.out.println(c);
     }
 }
 

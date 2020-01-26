@@ -16,4 +16,8 @@ public class BeanInjection {
         return "B";
     }
 
+    @Bean
+    public String c(String a, String b) {
+        return a + " ... " + b;
+    }
 }
